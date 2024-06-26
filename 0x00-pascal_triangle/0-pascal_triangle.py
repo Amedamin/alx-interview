@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""A module to build a triangle for any kind of input given"""
+"""A module to build a triangle"""
 
 
 def pascal_triangle(n):
-    """Returns a list of lists of integers representing"""
+    """pascal_triangle"""
     if n <= 0:
         return []
 
-    triangle = [[1]]
+    TRI = [[1]]
 
     for i in range(1, n):
-        row = [1]
+        ROW = [1]
         for j in range(1, i):
-            row.append(triangle[i-1][j-1] + triangle[i-1][j])
-        row.append(1)
-        triangle.append(row)
+            ROW.append(TRI[i-1][j-1] + TRI[i-1][j])
+        ROW.append(1)
+        TRI.append(ROW)
 
-    return triangle
+    return TRI
