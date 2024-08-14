@@ -15,6 +15,10 @@ def rotate_2d_matrix(MATRIX):
             # Perform the 4-way exchange
             TEMP = MATRIX[LAYER][ELEMENT]
             MATRIX[LAYER][ELEMENT] = MATRIX[SIZE - ELEMENT - 1][LAYER]
-            MATRIX[SIZE - ELEMENT - 1][LAYER] = MATRIX[SIZE - LAYER - 1][SIZE - ELEMENT - 1]
-            MATRIX[SIZE - LAYER - 1][SIZE - ELEMENT - 1] = MATRIX[ELEMENT][SIZE - LAYER - 1]
+            MATRIX[SIZE - ELEMENT - 1][LAYER] = (
+                MATRIX[SIZE - LAYER - 1][SIZE - ELEMENT - 1]
+            )
+            MATRIX[SIZE - LAYER - 1][SIZE - ELEMENT - 1] = (
+                MATRIX[ELEMENT][SIZE - LAYER - 1]
+            )
             MATRIX[ELEMENT][SIZE - LAYER - 1] = TEMP
